@@ -46,7 +46,8 @@ def main():
         country = fake.country()
         producer.send(topic_name, {'date': str_date, 'product_name': product_name, 'category': categories,
                                    'name': name, 'email': email_addr, 'ip_addr': str(ipv4_addr),
-                                   'items_in_cart': items_in_cart, 'price_in_cart': price_in_cart, 'country': country, 'url': url})
+                                   'items_in_cart': items_in_cart, 'price_in_cart': price_in_cart, 'country': country, 'url': url,
+                                   'login_duration': login_duration})
         if count == 0:
             print("Inserted entry ", i, " to topic", topic_name)
         count = 1
