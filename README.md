@@ -1,4 +1,4 @@
-# Code to integration a redpanda topic with delta lake
+# Code to integrate a redpanda topic with delta lake
 
 ### Topic schema
 
