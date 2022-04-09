@@ -28,6 +28,7 @@ def write_to_delta_table(spark, table_df):
     checkpoint_path = os.environ.get('DELTA_LAKE_CHECKOUT_DIR')
     ret = (writestream.format("delta")
         .option("checkpointLocation", checkpoint_path)
+        .option("failOnDataLoss", "false")
         .option("mergeSchema", "true")
         .outputMode("append") 
         .start(table_path)) 

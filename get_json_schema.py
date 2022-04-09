@@ -40,15 +40,17 @@ def get_table_df(spark):
     broker_ip = os.environ.get('REDPANDA_BROKER_IP')
     topic = os.environ.get('REDPANDA_TOPIC')
     schema = get_schema(spark)
+    print('GOT THE SCHEMA')
     table_df = ( 
                 spark
                 .readStream
                 .format("kafka")
                 .option("kafka.bootstrap.servers", broker_ip)
                 .option("subscribe", topic)
-                .option("startingOffsets", "latest")
+                .option("startingOffsets", "earliest")
                 .option("mergeSchema", "true")
                 .option("includeHeaders", "true")
+                .option("failOnDataLoss", "false")
                 .load()
                 .withColumn("value", expr("string(value)"))
                 .withColumn('value', from_json(col("value"), schema))
