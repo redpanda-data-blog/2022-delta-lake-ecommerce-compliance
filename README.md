@@ -8,7 +8,7 @@
 1) Clone the workspace
 2) cd to the directory when you have cloned the codebase
 3) ```sudo apt-get update```
-4) ```sudo apt-get install python3-pip python3-dev```
+4) ```sudo apt-get install python3-pip python3-dev python3-virtualenv```
 5) ```virtualenv myprojectenv```
 6) ```source myprojectenv/bin/activate```
 7) ```pip3 install -r requirements.txt```
