@@ -28,7 +28,6 @@ def main():
 
     producer = KafkaProducer(bootstrap_servers=[broker_ip],
                              value_serializer=lambda m: json.dumps(m).encode('ascii'))
-    count = 0
     url = 'https://sample.ecomm.com/product/'
     for i in range(100000):
         fake_date = fake.date_this_year(True, True)
@@ -48,9 +47,7 @@ def main():
                                    'name': name, 'email': email_addr, 'ip_addr': str(ipv4_addr),
                                    'items_in_cart': items_in_cart, 'price_in_cart': price_in_cart, 'country': country, 'url': url,
                                    'login_duration': login_duration})
-        if count == 0:
-            print("Inserted entry ", i, " to topic", topic_name)
-        count = 1
+        print("Inserted entry ", i, " to topic", topic_name)
         sleep(5)
 
 load_dotenv()

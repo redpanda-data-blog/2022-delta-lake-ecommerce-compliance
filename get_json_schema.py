@@ -40,7 +40,6 @@ def get_table_df(spark):
     broker_ip = os.environ.get('REDPANDA_BROKER_IP')
     topic = os.environ.get('REDPANDA_TOPIC')
     schema = get_schema(spark)
-    print('GOT THE SCHEMA')
     table_df = ( 
                 spark
                 .readStream
@@ -53,6 +52,7 @@ def get_table_df(spark):
                 .option("failOnDataLoss", "false")
                 .load()
                 .withColumn("value", expr("string(value)"))
+                .filter(col("value").isNotNull())
                 .withColumn('value', from_json(col("value"), schema))
                 .select('value.*')
     )
