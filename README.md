@@ -1,4 +1,4 @@
-# Code to integrate a redpanda topic with delta lake
+# Code to integrate a Redpanda topic with Delta Lake
 
 ### Topic schema
 
@@ -14,8 +14,8 @@
 7) ```pip3 install -r requirements.txt```
 
 ### Update .env values
-The default assumption in this workspace is that we will be using a single node redpanda cluster or localhost setup of redpanda.
-So if you have setup redpanda in a different manner then you will need to update the ```REDPANDA_BROKER_IP``` value
+The default assumption in this workspace is that we will be using a single node Redpanda cluster or localhost setup of Redpanda.
+So if you have setup Redpanda in a different manner then you will need to update the ```REDPANDA_BROKER_IP``` value
 in the .env file
 
 ![image](https://user-images.githubusercontent.com/102608342/162590098-45ddcac8-87ef-46b0-ab03-22d9906cc0e4.png)
@@ -29,13 +29,13 @@ The path in which the delta lake table will be created is also configurable. In 
 
 ```python redpanda_producer.py```
 
-### To load entries to delta lake. (Ensure that the producer is running prior to this). 
+### To load entries to Delta Lake. (Ensure that the producer is running prior to this). 
 
 ```python load_data.py```
 
-Node: There is a sleep in this code so that streams get continuously written to delta lake.
+Node: There is a sleep in this code so that streams get continuously written to Delta Lake.
 
-### To view your data from delta lake. This command should be run in a seperate terminal. (The first terminal should have load_data.py running in it)
+### To view your data from Delta Lake. This command should be run in a seperate terminal. (The first terminal should have load_data.py running in it)
 
 ```python view_data.py```
 
