@@ -1,3 +1,11 @@
+# Achieving compliant eCommerce data streaming with Delta Lake and Redpanda
+
+Learn how to integrate Delta Lake with Redpanda using Spark Streaming in a data-compliant eCommerce use case scenario.
+
+Follow along with [this tutorial on the Redpanda blog](https://redpanda.com/blog/delta-lake-spark-streaming-data-compliance) to put this demo into action. 
+
+---------------------
+
 # Code to integrate a Redpanda topic with Delta Lake
 
 ### Topic schema
@@ -38,4 +46,14 @@ Node: There is a sleep in this code so that streams get continuously written to 
 ### To view your data from Delta Lake. This command should be run in a seperate terminal. (The first terminal should have load_data.py running in it)
 
 ```python view_data.py```
+
+-----------------------
+
+## About Redpanda 
+
+Redpanda is Apache Kafka® API-compatible. Any client that works with Kafka will work with Redpanda, but we have tested the ones listed [here](https://docs.redpanda.com/docs/reference/faq/#what-clients-do-you-recommend-to-use-with-redpanda).
+
+* You can find our main project repo here: [Redpanda](https://github.com/redpanda-data/redpanda)
+* Join the [Redpanda Community on Slack](https://redpanda.com/slack)
+* [Sign up for Redpanda University](https://university.redpanda.com/) for free courses on data streaming and working with Redpanda
 
